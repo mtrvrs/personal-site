@@ -1,0 +1,30 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    <header class="site-header">
+        {% if section.extra.hidenav %}
+        {% else %}
+        {{ macros::nav(current_path=current_path) }}
+        {% endif %}
+    </header>
+    <main>
+        {% block main %}{% endblock main %}
+    </main>
+    <footer class="site-footer">
+        {% if section.extra.hidefooter %}
+        {% else %}
+        {{ macros::footer(current_path=current_path) }}
+        {% endif %}
+    </footer>
+</body>
+
+</html>

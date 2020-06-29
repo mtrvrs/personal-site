@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}{{ section.title }} | {{ config.title }}{% endblock title %}
+{% block main %}
+<div class="post-index">
+    <div class="post-index__heading">
+        <h1 class="post-index__heading-name">POSTS</h1>
+    </div>
+    <div class="post-index__index">
+        {% set posts = get_section(path="posts/_index.md") %}
+        {% for page in posts.pages %}
+        <div class="post-index__post">
+            <div class="post-index__post-header">
+                <a href="{{ page.permalink }}" class="post-index__post-title">
+                    {{ page.title }}
+                </a>
+                {% if page.date %}
+                <time class="post-index__post-date">
+                    {{ page.date | date(format="%b %e, %Y") }}
+                </time>
+                {% endif %}
+            </div>
+            <div class="post-index__post-excerpt">
+                {% if page.extra.excerpt %}
+                {{ page.extra.excerpt | striptags | safe }}
+                {% endif %}
+                <a href="{{ page.permalink }}" class="post-index__post-more">read more →</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock main %}

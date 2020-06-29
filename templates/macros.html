@@ -1,0 +1,63 @@
+<!-- navigation -->
+{% macro nav(current_path) %}
+<nav class="site-nav">
+    {% set path = current_path %}
+    <ul class="site-nav__list">
+        <li class="site-nav__item">
+            <a href="/" class="site-nav__link">home</a>
+        </li>
+        {% if path == 'posts/' %}
+        <li class="site-nav__item--active"><a href="/posts/" class="site-nav__link">posts</a></li>
+        {% else %}
+        <li class="site-nav__item"><a href="/posts/" class="site-nav__link">posts</a></li>
+        {% endif %}
+        {% if path == 'projects/' %}
+        <li class="site-nav__item--active"><a href="/projects/" class="site-nav__link">projects</a></li>
+        {% else %}
+        <li class="site-nav__item"><a href="/projects/" class="site-nav__link">projects</a></li>
+        {% endif %}
+        {% if path == 'contact/' %}
+        <li class="site-nav__item--active"><a href="/contact/" class="site-nav__link">contact</a></li>
+        {% else %}
+        <li class="site-nav__item"><a href="/contact/" class="site-nav__link">contact</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endmacro nav %}
+<!-- footer -->
+{% macro footer(current_path) %}
+<small class="site-footer__copyright">
+    © Copyright Michael Travers
+    <time class="site-footer__date">2020</time>
+    |
+    <a href="" class="site-footer__contact">Contact</a>
+    |
+    <a href="https://www.github.com/mtrvrs" class="site-footer__source-code">
+        Site Source Code
+    </a>
+</small>
+{% endmacro footer %}
+<!-- tags -->
+{% macro render_taxonomies(taxonomies) %}
+{{ macros::render_tags(tags=taxonomies.tags) }}
+{% endmacro render_taxonomies %}
+{% macro render_tags(tags) %}
+<div class="post__tags">
+    <a class="post__tags-text" href="/tags">Tags:</a>
+    {% for tag in tags %}
+    {% if loop.last %}
+    <a class="post__tags-tag" href="/tags/{{ tag | slugify }}/">{{ tag | title }}</a>
+    {% else %}
+    <a class="post__tags-tag" href="/tags/{{ tag | slugify }}/">{{ tag | title }}</a>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endmacro render_tags %}
+{% macro render_term(term) %}
+<div class="row">
+    <tr>
+        <td><time datetime="{{ term.date }}">{{ term.date }}</time></td>
+        <td><a href="/{{ term.path }}">{{ term.title }}</a></td>
+    </tr>
+</div>
+{% endmacro render_term %}

@@ -1,0 +1,90 @@
+.post {
+    display: grid;
+    padding: 0 10px;
+
+    &__header,
+    h2,
+    p {
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    &__header,
+    h2 {
+        border-bottom: 1px solid #cccccc;
+    }
+
+    &__title {
+        font-family: 'hk_groteskbold', sans-serif;
+        padding-bottom: 10px;
+        font-size: 3rem;
+    }
+
+    &__sub-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__tags-text {
+        text-decoration: none;
+        color: var(--baltic-sea);
+    }
+
+    &__content {
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-family: 'hk_groteskbold', sans-serif;
+        font-size: 2rem;
+    }
+
+    // mailing list
+
+    &__mailing-list {
+        margin-top: 100px;
+        margin-bottom: 30px;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    &__mailing-list-input {
+        justify-content: center;
+        align-content: center;
+        padding-top: 10px;
+    }
+
+    &__mailing-list-button {
+        color: var(--background);
+        background-color: var(--baltic-sea);
+        height: 33px;
+        padding: 0 25px;
+        border-radius: 3px;
+        border: 0;
+        margin: 10px 0;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    // media query
+
+    @media screen and (min-width: 850px) {
+        grid-template-columns: 1fr 650px 1fr;
+        grid-gap: 1em;
+        height: 100%;
+
+        &__header {
+            grid-area: 1 / 2;
+        }
+
+        &__content {
+            grid-area: 2 / 2;
+        }
+
+        &__mailing-list {
+            grid-area: 3 / 2;
+        }
+    }
+}

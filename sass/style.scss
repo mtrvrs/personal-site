@@ -1,0 +1,79 @@
+@import '_index.scss';
+@import '_nav.scss';
+@import '_footer.scss';
+@import '_post-index.scss';
+@import '_post.scss';
+@import '_project-index.scss';
+@import '_project.scss';
+@import '_contact.scss';
+@import '_list.scss';
+@import '_single.scss';
+
+@font-face {
+    font-family: 'hk_grotesklight';
+    src: url('fonts/hkgrotesk-light-webfont.woff2') format('woff2'),
+        url('fonts/hkgrotesk-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hk_groteskregular';
+    src: url('fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
+        url('fonts/hkgrotesk-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'hk_groteskbold';
+    src: url('fonts/hkgrotesk-bold-webfont.woff2') format('woff2'),
+        url('fonts/hkgrotesk-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+:root {
+    --background: #F6F6F6;
+    --baltic-sea: #3D3D3D;
+    --asbestos: #7F8C8D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    font-size: 100%;
+    color: var(--baltic-sea);
+    // overflow-x: hidden;, otherwise get sidescroll due to vertical padding
+    // in the _post-index.scss file from the &__post padding css for
+    // some reason.
+    overflow-x: hidden;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 100vw;
+    height: 100vh;
+    background: var(--background);
+}
+
+header {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+footer {
+    padding: 0 10px;
+    margin: 0px auto;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "macros.html" as macros %}
+{% block title %} {{ term.name }} | {{ config.title }} {% endblock title %}
+{% block main %}
+<div class="tags">
+    <div class="tags__heading">
+        <h1 class="tags__heading-name">{{ term.name | title }}</h1>
+    </div>
+    <div class="tags__content">
+        <div class="tags__pages">
+            {% for page in term.pages %}
+            {{ macros::render_term(term=page) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock main %}

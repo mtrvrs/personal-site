@@ -1,0 +1,18 @@
+# The URL the site will be built for
+base_url = "https://mtrvrs.com"
+title = "mtrvrs"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# RSS Feeed
+rss_limit = 20
+generate_rss = true
+
+# Whether to do syntax highlighting
+highlight_code = true
+
+taxonomies = [{name = "tags", rss = true}]
+
+[extra]
+author = "Michael Travers"

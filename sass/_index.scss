@@ -1,0 +1,32 @@
+.landing {
+    display: grid;
+    justify-content: center;
+    height: 100%;
+    padding: 15px;
+
+    &__container {
+        align-self: center;
+
+        @media screen and (min-width: 860px) {
+            padding: 30px;
+            min-width: 360px;
+            max-width: 860px;
+        }
+    }
+
+    &__name {
+        font-family: 'HK Grotesk', 'sans-serif';
+        font-weight: bold;
+        text-align: left;
+    }
+
+    &__blurb-text {
+        font-weight: 100;
+        font-size: 1.5em;
+        letter-spacing: -0.08rem;
+    }
+
+    &__blurb-link {
+        color: var(--asbestos);
+    }
+}
