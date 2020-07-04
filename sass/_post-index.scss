@@ -2,15 +2,18 @@
     display: grid;
     padding: 0 10px;
     padding-bottom: 200px;
+    max-width: 650px;
+    margin: 0 auto;
+
+    &__heading-name {
+        font-family: 'hk_groteskbold';
+        text-decoration: underline;
+    }
 
     &__index {
         display: grid;
         grid-gap: 2rem;
     }
-
-    // &__post {
-    //     padding: 15px 0;
-    // }
 
     &__post-header {
         display: flex;
@@ -27,7 +30,7 @@
     &__post-date {
         text-decoration: underline;
         font-size: 0.7em;
-        padding: 10px 0;
+        padding: 5px 0;
     }
 
     &__post-excerpt {
@@ -42,6 +45,7 @@
     // media query
 
     @media screen and (min-width: 1100px) {
+        max-width: 100%;
         grid-template-columns: 1fr 650px 1fr;
         grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
         grid-gap: 1em;
@@ -56,10 +60,10 @@
         }
 
         &__heading-name {
+            text-decoration: none;
             font-size: 10rem;
             font-family: 'hk_groteskbold';
-            color: var(--asbestos);
-            opacity: 8%;
+            color: var(--page-title);
             writing-mode: vertical-lr;
             transform: rotate(-180deg);
         }

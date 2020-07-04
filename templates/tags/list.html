@@ -9,7 +9,8 @@
         <div class="tags__tag">
             {% for tag in terms %}
             <li>
-                <a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">{{ tag.name }}</a> ({{ tag.pages | length }})
+                <a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">{{ tag.name }}</a>
+                ({{ tag.pages | length }})
             </li>
             {% endfor %}
         </div>

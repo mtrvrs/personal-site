@@ -40,6 +40,7 @@
     --background: #F6F6F6;
     --baltic-sea: #3D3D3D;
     --asbestos: #7F8C8D;
+    --page-title: #E9E9E9;
 }
 
 * {
@@ -49,7 +50,7 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: 'hk_grotesklight', sans-serif;
     font-size: 100%;
     color: var(--baltic-sea);
     // overflow-x: hidden;, otherwise get sidescroll due to vertical padding

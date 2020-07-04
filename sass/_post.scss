@@ -1,6 +1,8 @@
 .post {
     display: grid;
     padding: 0 10px;
+    max-width: 650px;
+    margin: 0 auto;
 
     &__header,
     h2,
@@ -40,6 +42,11 @@
         font-size: 2rem;
     }
 
+    // tags
+    &__tags-tag {
+        color: #95A5A6;
+    }
+
     // mailing list
 
     &__mailing-list {
@@ -57,10 +64,11 @@
     }
 
     &__mailing-list-button {
+        font-family: 'hk_groteskregular', sans-serif;
         color: var(--background);
         background-color: var(--baltic-sea);
-        height: 33px;
-        padding: 0 25px;
+        height: 26px;
+        padding: 0 15px;
         border-radius: 3px;
         border: 0;
         margin: 10px 0;
@@ -68,9 +76,14 @@
         cursor: pointer;
     }
 
+    &__mailing-list-form-label {
+        height: 25px;
+    }
+
     // media query
 
     @media screen and (min-width: 850px) {
+        max-width: 100%;
         grid-template-columns: 1fr 650px 1fr;
         grid-gap: 1em;
         height: 100%;

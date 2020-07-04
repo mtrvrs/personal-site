@@ -15,13 +15,13 @@
     }
 
     &__name {
-        font-family: 'HK Grotesk', 'sans-serif';
-        font-weight: bold;
+        font-family: 'hk_groteskbold', 'sans-serif';
+        // font-weight: bold;
         text-align: left;
     }
 
     &__blurb-text {
-        font-weight: 100;
+        font-family: 'hk_grotesklight';
         font-size: 1.5em;
         letter-spacing: -0.08rem;
     }
